@@ -1,0 +1,96 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="React.svg" type="image/svg">
+    <title>LinkVault - Secure Link Manager</title>
+    <link rel="stylesheet" href="Styles.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Message Toast -->
+    <div id="toast" class="toast"></div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-vault"></i>
+                <h1>LinkVault</h1>
+            </div>
+            <div id="userInfo" class="user-info" style="display: none;">
+                <span id="userEmail"></span>
+                <button id="logoutBtn" class="btn btn-logout">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+        </header>
+
+        <!-- Auth Section -->
+        <div id="authSection" class="auth-section">
+            <div class="auth-card">
+                <h2>Welcome to LinkVault</h2>
+                <p class="subtitle">Organize and secure your links in one place</p>
+                <form id="authForm" class="auth-form">
+                    <div class="input-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="authEmail" placeholder="Email Address" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="authPassword" placeholder="Password" required>
+                    </div>
+                    <div class="auth-buttons">
+                        <button type="button" id="loginBtn" class="btn btn-primary">
+                            <i class="fas fa-sign-in-alt"></i> Login
+                        </button>
+                        <button type="button" id="registerBtn" class="btn btn-secondary">
+                            <i class="fas fa-user-plus"></i> Register
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div id="mainContent" class="main-content" style="display: none;">
+            <!-- Control Panel -->
+            <div class="control-panel">
+                <div class="input-group create-group">
+                    <i class="fas fa-folder-plus"></i>
+                    <input type="text" id="newGroupName" placeholder="Create New Link Collection">
+                    <button id="createGroupBtn" class="btn btn-create">
+                        <i class="fas fa-plus"></i> Create
+                    </button>
+                </div>
+                <div class="action-buttons">
+                    <button id="exportBtn" class="btn btn-action">
+                        <i class="fas fa-upload"></i> Export
+                    </button>
+                    <button id="importBtn" class="btn btn-action">
+                        <i class="fas fa-download"></i> Import
+                    </button>
+                    <input type="file" id="importFile" accept=".json" style="display: none;">
+                </div>
+            </div>
+
+            <!-- Groups Grid -->
+            <div id="groupsContainer" class="groups-grid">
+                <div class="empty-state">
+                    <i class="fas fa-folder-open"></i>
+                    <h3>No Collections Yet</h3>
+                    <p>Create your first link collection to get started!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="App.js"></script>
+</body>
+
+</html>
