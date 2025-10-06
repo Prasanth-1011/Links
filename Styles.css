@@ -585,4 +585,8 @@ body {
     .auth-buttons {
         flex-direction: column;
     }
+
+    .userEmail {
+        display: none;
+    }
 }
