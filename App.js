@@ -455,12 +455,13 @@ function renderLinks(group) {
                         <i class="fas fa-trash" onclick="deleteLink('${group._id}', ${link.id})"></i>
                     </div>
                 </div>
-                <div class="link-url">${escapeHtml(link.url)}</div>
+                
             </div>
         `;
     }).join('');
 }
 
+// <div class="link-url">${escapeHtml(link.url)}</div>
 // UI Helpers
 function toggleAddForm(groupId) {
     const form = document.getElementById(`add-form-${groupId}`);
@@ -521,4 +522,5 @@ function escapeHtml(text) {
         "'": '&#039;'
     };
     return text.replace(/[&<>"']/g, m => map[m]);
+
 }
